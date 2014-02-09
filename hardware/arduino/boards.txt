@@ -167,27 +167,6 @@ leonardo.build.variant=leonardo
 
 ##############################################################
 
-oscarleo.name=Arduino Leonardo
-oscarleo.upload.protocol=avr109
-oscarleo.upload.maximum_size=28672
-oscarleo.upload.speed=57600
-oscarleo.upload.disable_flushing=true
-oscarleo.bootloader.low_fuses=0xff
-oscarleo.bootloader.high_fuses=0xd8
-oscarleo.bootloader.extended_fuses=0xcb
-oscarleo.bootloader.path=caterina
-oscarleo.bootloader.file=Caterina-Leonardo.hex
-oscarleo.bootloader.unlock_bits=0x3F
-oscarleo.bootloader.lock_bits=0x2F
-oscarleo.build.mcu=atmega32u4
-oscarleo.build.f_cpu=16000000L
-oscarleo.build.vid=0xaaaa
-oscarleo.build.pid=0x1234
-oscarleo.build.core=arduino
-oscarleo.build.variant=leonardo
-
-##############################################################
-
 esplora.name=Arduino Esplora
 esplora.upload.protocol=avr109
 esplora.upload.maximum_size=28672
