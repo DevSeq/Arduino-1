@@ -16,7 +16,7 @@
 ** SOFTWARE.  
 */
 
-#define CDC_ENABLED
+//#define CDC_ENABLED
 #define HID_ENABLED
 
 
