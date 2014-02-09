@@ -64,9 +64,10 @@ const u8 _hidReportDescriptor[] = {
 extern const HIDDescriptor _hidInterface PROGMEM;
 const HIDDescriptor _hidInterface =
 {
-	D_INTERFACE(HID_INTERFACE,1,3,0,0),
+	D_INTERFACE(HID_INTERFACE,2,3,0,0),
 	D_HIDREPORT(sizeof(_hidReportDescriptor)),
-	D_ENDPOINT(USB_ENDPOINT_IN (HID_ENDPOINT_INT),USB_ENDPOINT_TYPE_INTERRUPT,0x40,0x01)
+	D_ENDPOINT(USB_ENDPOINT_IN (HID_ENDPOINT_INT),USB_ENDPOINT_TYPE_INTERRUPT,0x40,0x01),
+	D_ENDPOINT(USB_ENDPOINT_OUT (HID_ENDPOINT_INT),USB_ENDPOINT_TYPE_INTERRUPT,0x40,0x01)
 };
 
 //================================================================================

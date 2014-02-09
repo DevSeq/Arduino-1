@@ -275,6 +275,7 @@ typedef struct
 	InterfaceDescriptor			hid;
 	HIDDescDescriptor			desc;
 	EndpointDescriptor			in;
+	EndpointDescriptor			out;
 } HIDDescriptor;
 
 
