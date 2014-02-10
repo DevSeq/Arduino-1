@@ -40,13 +40,13 @@
 
 //_____  I N C L U D E S ___________________________________________________
 
-#include "config.h"
-#include "conf_usb.h"
-#include "device_template_task.h"
-#include "lib_mcu/usb/usb_drv.h"
-#include "usb_descriptors.h"
-#include "modules/usb/device_chap9/usb_standard_request.h"
-#include "lib_mcu/wdt/wdt_drv.h"
+#include <config.h>
+#include <conf_usb.h>
+#include <device_template_task.h>
+#include <usb_drv.h>
+#include <usb_descriptors.h>
+#include <usb_standard_request.h>
+#include <wdt_drv.h>
 
 
 //_____ M A C R O S ________________________________________________________
@@ -77,12 +77,14 @@ U8 rxok;
 //!/
 void device_template_task_init(void)
 {
-   Joy_init();
-   Hwb_button_init();
-   Leds_init();
+   init();
+
    cpt_sof=0;
    Usb_enable_sof_interrupt();
    rxok=FALSE;
+
+   //Call Arduino user setup
+   setup();
 }
 
 //! @brief Entry point of the device application
@@ -101,15 +103,9 @@ void device_template_task(void)
    //.. FIRST CHECK THE DEVICE ENUMERATION STATE
    if (Is_device_enumerated())
    {
-      //.. HERE START THE USB DEVICE APPLICATIVE CODE
       //.. The example bellow just perform a loop back transmition/reception
       //.. All data received wth the OUT endpoint are store in a ram buffer and
       //.. send back to the IN endpoint
-
-      //.. For example, blink a led with start of frame counter
-      if(cpt_sof>0x7F)
-      {  Led0_on(); }
-      else { Led0_off();}
 
       //.. First interface management
       //.. Select the OUT endpoint declared in descriptors
@@ -151,6 +147,9 @@ void device_template_task(void)
          dummy_data+=4;
       }
    }
+
+   //Call Arduino user loop
+   loop();
 }
 
 
