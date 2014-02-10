@@ -40,6 +40,7 @@
 
 //_____  I N C L U D E S ___________________________________________________
 
+#include <Arduino.h>
 #include <config.h>
 #include <conf_usb.h>
 #include <device_template_task.h>

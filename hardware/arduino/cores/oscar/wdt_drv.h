@@ -83,7 +83,13 @@
 
 //! This functions stops the hardware watchdog timer.
 //!
+#ifdef __cplusplus
+extern "C" {
+#endif
 void wdtdrv_disable(void);
+#ifdef __cplusplus
+}
+#endif
 
 
 //! This functions activates the hardware watchdog timer

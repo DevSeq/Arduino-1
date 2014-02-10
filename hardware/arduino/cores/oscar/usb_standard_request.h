@@ -51,7 +51,7 @@
 
 //_____ I N C L U D E S ____________________________________________________
 
-#include <modules/usb/usb_task.h>
+#include <usb_task.h>
 #include <usb_descriptors.h>
 
 //_____ M A C R O S ________________________________________________________
@@ -64,12 +64,12 @@
 
 
         // Device State
-#define ATTACHED                          0
-#define POWERED                           1
-#define DEFAULT                           2
-#define ADDRESSED                         3
-#define CONFIGURED                        4
-#define SUSPENDED                         5
+#define ST_ATTACHED                          0
+#define ST_POWERED                           1
+#define ST_DEFAULT                           2
+#define ST_ADDRESSED                         3
+#define ST_CONFIGURED                        4
+#define ST_SUSPENDED                         5
 
 #define USB_REMOTE_WAKEUP       1
 

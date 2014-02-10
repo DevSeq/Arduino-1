@@ -242,8 +242,6 @@ typedef char      r_uart_ptchar;
 #define DISABLE  0
 #define FALSE   (0==1)
 #define TRUE    (1==1)
-#define true    TRUE
-#define false   FALSE
 
 
 #define KO      0
@@ -259,8 +257,8 @@ typedef char      r_uart_ptchar;
 #endif
 
 /* Bit and bytes manipulations */
-#define LOW(U16)                ((Uchar)U16)
-#define HIGH(U16)               ((Uchar)(U16>>8))
+#define LOW_BYTE(U16)                ((Uchar)U16)
+#define HIGH_BYTE(U16)               ((Uchar)(U16>>8))
 #define TST_BIT_X(addrx,mask)   (*addrx & mask)
 #define SET_BIT_X(addrx,mask)   (*addrx = (*addrx | mask))
 #define CLR_BIT_X(addrx,mask)   (*addrx = (*addrx & ~mask))
@@ -326,29 +324,6 @@ typedef char      r_uart_ptchar;
 ************************************************************/
 #define SET_SFR_BIT(sfr_reg, bit_pos, bit_val) { sfr_reg &= ~(1<<(bit_pos)); sfr_reg |= ((bit_val)<<(bit_pos));}
 
-/***********************************************************
- bit_is_clear macro
-  parameters
-    PORT     : defined value in include file for sfr register
-    POSITION : defined value in include file for particular
-              bit of sfr register
-  example : if (bit_is_clear(PORTB,PORTB3)) ...
-************************************************************/
-#define bit_is_clear(PORT,POSITION) ((PORT & (1<<POSITION)) == 0 )
-
-/***********************************************************
- bit_is_set macro
-  parameters
-    PORT     : defined value in include file for sfr register
-    POSITION : defined value in include file for particular
-              bit of sfr register
-  example : if (bit_is_set(PORTB,PORTB3)) ...
-************************************************************/
-#define bit_is_set(PORT,POSITION) ((PORT & (1<<POSITION)) != 0 )
-
-
-
-
 
 #define TID_GUARD(proc) ((__TID__ & 0x7FF0) != ((90 << 8) | ((proc) << 4)))
 
@@ -369,7 +344,6 @@ typedef char      r_uart_ptchar;
 #define At(x) @ x
 #define pdata
 #define bdata
-#define bit   U8
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
 #define Enable_interrupt() sei()

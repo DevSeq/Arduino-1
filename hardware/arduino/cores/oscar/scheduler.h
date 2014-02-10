@@ -176,7 +176,14 @@ extern Uchar token;
 //!_____ D E C L A R A T I O N ______________________________________________
 void scheduler_init         (void);
 void scheduler_tasks        (void);
+#ifdef __cplusplus
+extern "C" {
+#endif
 void scheduler              (void);
+#ifdef __cplusplus
+}
+#endif
+
 void scheduler_empty_fct    (void);
 
 #ifndef SCHEDULER_TYPE

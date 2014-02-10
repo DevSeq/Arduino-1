@@ -62,18 +62,18 @@
 //_____ D E F I N I T I O N S ______________________________________________
 
 //!
-//! Public : (bit) usb_connected
+//! Public : (U8) usb_connected
 //! usb_connected is set to TRUE when VBUS has been detected
 //! usb_connected is set to FALSE otherwise
 //!/
-bit   usb_connected=FALSE;
+U8   usb_connected=FALSE;
 
 //!
-//! Public : (bit) usb_suspended
+//! Public : (U8) usb_suspended
 //! usb_suspended is set to TRUE when USB is in suspend mode
 //! usb_suspended is set to FALSE otherwise
 //!/
-bit   usb_suspended=FALSE;
+U8   usb_suspended=FALSE;
 
 
 

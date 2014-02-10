@@ -82,12 +82,12 @@ volatile U16 g_usb_event=0;
 
 #if (USB_DEVICE_FEATURE == ENABLED)
 //!
-//! Public : (bit) usb_connected
+//! Public : (U8) usb_connected
 //! usb_connected is set to TRUE when VBUS has been detected
 //! usb_connected is set to FALSE otherwise
 //! Used with USB_DEVICE_FEATURE == ENABLED only
 //!/
-extern bit   usb_connected;
+extern U8   usb_connected;
 
 //!
 //! Public : (U8) usb_configuration_nb
