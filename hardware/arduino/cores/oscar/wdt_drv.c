@@ -40,8 +40,8 @@
 
 //_____ I N C L U D E S ____________________________________________________
 
-#include "config.h"
-#include "wdt_drv.h"
+#include <config.h>
+#include <wdt_drv.h>
 
 //_____ M A C R O S ________________________________________________________
 

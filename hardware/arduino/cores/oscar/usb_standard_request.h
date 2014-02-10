@@ -51,8 +51,8 @@
 
 //_____ I N C L U D E S ____________________________________________________
 
-#include "modules/usb/usb_task.h"
-#include "usb_descriptors.h"
+#include <modules/usb/usb_task.h>
+#include <usb_descriptors.h>
 
 //_____ M A C R O S ________________________________________________________
 

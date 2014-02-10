@@ -44,8 +44,8 @@
 
 //!_____ I N C L U D E S ____________________________________________________
 #define _SCHEDULER_C_
-#include "config.h"                         // system definition 
-#include "scheduler.h"                      // scheduler definition 
+#include <config.h>                         // system definition 
+#include <scheduler.h>                      // scheduler definition 
 
 
 //!_____ M A C R O S ________________________________________________________

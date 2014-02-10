@@ -45,16 +45,16 @@
 
 //_____  I N C L U D E S ___________________________________________________
 
-#include "config.h"
-#include "conf_usb.h"
-#include "usb_device_task.h"
-#include "modules/usb/usb_task.h"
-#include "lib_mcu/usb/usb_drv.h"
-#include "usb_descriptors.h"
-#include "modules/usb/device_chap9/usb_standard_request.h"
-#include "lib_mcu/pll/pll_drv.h"
+#include <config.h>
+#include <conf_usb.h>
+#include <usb_device_task.h>
+#include <usb_task.h>
+#include <usb_drv.h>
+#include <usb_descriptors.h>
+#include <usb_standard_request.h>
+#include <pll_drv.h>
 #ifdef USE_USB_AUTOBAUD
-#include "lib_mcu/wdt/wdt_drv.h"
+#include <wdt_drv.h>
 #endif
 
 //_____ M A C R O S ________________________________________________________

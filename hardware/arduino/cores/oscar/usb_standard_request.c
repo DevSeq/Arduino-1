@@ -48,16 +48,16 @@
 
 //_____ I N C L U D E S ____________________________________________________
 
-#include "config.h"
-#include "conf_usb.h"
-#include "lib_mcu/usb/usb_drv.h"
-#include "lib_mcu/pll/pll_drv.h"
-#include "usb_descriptors.h"
-#include "modules/usb/device_chap9/usb_standard_request.h"
-#include "usb_specific_request.h"
+#include <config.h>
+#include <conf_usb.h>
+#include <usb_drv.h>
+#include <pll_drv.h>
+#include <usb_descriptors.h>
+#include <usb_standard_request.h>
+#include <usb_specific_request.h>
 
 #if ((USB_DEVICE_SN_USE==ENABLE) && (USE_DEVICE_SN_UNIQUE==ENABLE))
-#include "lib_mcu/flash/flash_drv.h"
+#include <flash_drv.h>
 static  U8   bin_to_ascii (U8 b);
 #endif
 

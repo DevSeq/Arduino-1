@@ -47,15 +47,15 @@
 
 //_____  I N C L U D E S ___________________________________________________
 
-#include "config.h"
-#include "conf_usb.h"
-#include "usb_task.h"
-#include "lib_mcu/usb/usb_drv.h"
-#include "usb_descriptors.h"
-#include "lib_mcu/power/power_drv.h"
-#include "lib_mcu/wdt/wdt_drv.h"
-#include "lib_mcu/pll/pll_drv.h"
-#include "modules/usb/device_chap9/usb_device_task.h"
+#include <config.h>
+#include <conf_usb.h>
+#include <usb_task.h>
+#include <usb_drv.h>
+#include <usb_descriptors.h>
+#include <power_drv.h>
+#include <wdt_drv.h>
+#include <pll_drv.h>
+#include <usb_device_task.h>
 
 #ifndef  USE_USB_PADS_REGULATOR
    #error "USE_USB_PADS_REGULATOR" should be defined as ENABLE or DISABLE in conf_usb.h file
