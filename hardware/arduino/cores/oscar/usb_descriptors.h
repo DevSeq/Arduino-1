@@ -46,9 +46,9 @@
 
 //_____ I N C L U D E S ____________________________________________________
 
-#include "config.h"
-#include "modules/usb/device_chap9/usb_standard_request.h"
-#include "conf_usb.h"
+#include <config.h>
+#include <usb_standard_request.h>
+#include <conf_usb.h>
 
 //_____ M A C R O S ________________________________________________________
 
@@ -66,11 +66,11 @@
 #define DEVICE_SUB_CLASS      0      //! each configuration has its own sub-class
 #define DEVICE_PROTOCOL       0      //! each configuration has its own protocol
 #define EP_CONTROL_LENGTH     64
-#define VENDOR_ID             VID_ATMEL
-#define PRODUCT_ID            0x0000
+#define VENDOR_ID             0xaaaa
+#define PRODUCT_ID            0x1234
 #define RELEASE_NUMBER        0x1000
 #define MAN_INDEX             0x01
-#define PROD_INDEX            0x02   
+#define PROD_INDEX            0x02
 #if (USB_DEVICE_SN_USE==ENABLE)
 #define SN_INDEX              0x03
 #else
@@ -130,31 +130,44 @@
 #define LANG_ID               0x00
 
 
-#define USB_MN_LENGTH         5
+#define USB_MN_LENGTH         20
 #define USB_MANUFACTURER_NAME \
-{ Usb_unicode('A') \
+{ Usb_unicode('e') \
+, Usb_unicode('e') \
+, Usb_unicode('Z') \
+, Usb_unicode('y') \
+, Usb_unicode('S') \
+, Usb_unicode('y') \
+, Usb_unicode('s') \
+, Usb_unicode(' ') \
 , Usb_unicode('T') \
-, Usb_unicode('M') \
-, Usb_unicode('E') \
-, Usb_unicode('L') \
+, Usb_unicode('e') \
+, Usb_unicode('c') \
+, Usb_unicode('h') \
+, Usb_unicode('n') \
+, Usb_unicode('o') \
+, Usb_unicode('l') \
+, Usb_unicode('o') \
+, Usb_unicode('g') \
+, Usb_unicode('i') \
+, Usb_unicode('e') \
+, Usb_unicode('s') \
 }
 
-#define USB_PN_LENGTH         14
+#define USB_PN_LENGTH         12
 #define USB_PRODUCT_NAME \
-{ Usb_unicode('A') \
- ,Usb_unicode('V') \
+{ Usb_unicode('O') \
+ ,Usb_unicode('S') \
+ ,Usb_unicode('C') \
+ ,Usb_unicode('A') \
  ,Usb_unicode('R') \
  ,Usb_unicode(' ') \
- ,Usb_unicode('U') \
  ,Usb_unicode('S') \
- ,Usb_unicode('B') \
- ,Usb_unicode(' ') \
- ,Usb_unicode('D') \
- ,Usb_unicode('E') \
- ,Usb_unicode('V') \
- ,Usb_unicode('I') \
- ,Usb_unicode('C') \
- ,Usb_unicode('E') \
+ ,Usb_unicode('c') \
+ ,Usb_unicode('r') \
+ ,Usb_unicode('e') \
+ ,Usb_unicode('e') \
+ ,Usb_unicode('n') \
 }
 
 #define USB_SN_LENGTH         0x0D
