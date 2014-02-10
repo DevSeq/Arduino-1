@@ -63,7 +63,7 @@
 //! @}
 
 //! CPU core frequency in kHz
-#define FOSC 8000
+#define FOSC 16000
 #define PLL_OUT_FRQ  PLL_OUT_96MHZ
 
 

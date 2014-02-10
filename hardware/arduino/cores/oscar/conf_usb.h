@@ -74,13 +74,14 @@
    //!
    //! @{
 
-#define USB_DEVICE_SN_USE          DISABLE            // DISABLE
+#define USB_LOW_SPEED_DEVICE DISABLE
+
+#define USB_DEVICE_SN_USE          ENABLE            // DISABLE
 #define USE_DEVICE_SN_UNIQUE       DISABLE            // ignore if USB_DEVICE_SN_USE = DISABLE
 
 #define NB_ENDPOINTS          4  //  number of endpoints in the application including control endpoint
 #define EP_TEMP_IN            1
-#define EP_TEMP_OUT           2
-#define EP_TEMP_INT_IN        3
+#define EP_TEMP_OUT           1
 
 #define USB_REMOTE_WAKEUP_FEATURE     DISABLED   //! don't allow remote wake up
 

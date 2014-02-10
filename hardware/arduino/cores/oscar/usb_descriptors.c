@@ -88,9 +88,7 @@ code S_usb_user_configuration_descriptor usb_conf_desc = {
  , Usb_write_word_enum_struc(sizeof(S_usb_configuration_descriptor)\
        +sizeof(S_usb_interface_descriptor)   \
        +sizeof(S_usb_endpoint_descriptor)   \
-       +sizeof(S_usb_endpoint_descriptor))  \
-       +sizeof(S_usb_interface_descriptor)  \
-       +sizeof(S_usb_endpoint_descriptor)
+       +sizeof(S_usb_endpoint_descriptor))
  , NB_INTERFACE
  , CONF_NB
  , CONF_INDEX
@@ -123,25 +121,6 @@ code S_usb_user_configuration_descriptor usb_conf_desc = {
  , EP_ATTRIBUTES_TEMP2
  , Usb_write_word_enum_struc(EP_SIZE_TEMP2)
  , EP_INTERVAL_TEMP2
- }
- ,
- { sizeof(S_usb_interface_descriptor)
- , DESCRIPTOR_INTERFACE
- , INTERFACE_NB_SECOND_TEMP
- , ALTERNATE_SECOND_TEMP
- , NB_ENDPOINT_SECOND_TEMP
- , INTERFACE_CLASS_SECOND_TEMP
- , INTERFACE_SUB_CLASS_SECOND_TEMP
- , INTERFACE_PROTOCOL_SECOND_TEMP
- , INTERFACE_INDEX_SECOND_TEMP
- }
- ,
- { sizeof(S_usb_endpoint_descriptor)
- , DESCRIPTOR_ENDPOINT
- , ENDPOINT_NB_TEMP3
- , EP_ATTRIBUTES_TEMP3
- , Usb_write_word_enum_struc(EP_SIZE_TEMP3)
- , EP_INTERVAL_TEMP3
  }
 };
 

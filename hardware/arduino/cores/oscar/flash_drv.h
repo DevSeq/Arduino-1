@@ -96,7 +96,13 @@
 //!
 //! @return byte  Read value
 //!
+#ifdef __cplusplus
+extern "C" {
+#endif
 U8    flash_read_sig(unsigned long adr);
+#ifdef __cplusplus
+}
+#endif
 
 //! @brief This macro function allows to read a fuse byte of the product.
 //!

@@ -136,12 +136,6 @@ void usb_user_endpoint_init(U8 conf_nb)
                           SIZE_64,       \
                           ONE_BANK,      \
                           NYET_ENABLED);
-   usb_configure_endpoint(EP_TEMP_INT_IN,\
-                          TYPE_BULK,     \
-                          TYPE_INTERRUPT,\
-                          SIZE_64,       \
-                          ONE_BANK,      \
-                          NYET_ENABLED);
 }
 
 
@@ -175,14 +169,6 @@ void usb_user_interface_reset(U16 wInterface, U8 alternate_setting)
       Usb_select_endpoint(EP_TEMP_OUT);
       Usb_disable_stall_handshake();
       Usb_reset_endpoint(EP_TEMP_OUT);
-      Usb_reset_data_toggle();
-   }
-   if( INTERFACE_NB_SECOND_TEMP == wInterface )
-   {
-      // Interface reset
-      Usb_select_endpoint(EP_TEMP_INT_IN);
-      Usb_disable_stall_handshake();
-      Usb_reset_endpoint(EP_TEMP_INT_IN);
       Usb_reset_data_toggle();
    }
 }

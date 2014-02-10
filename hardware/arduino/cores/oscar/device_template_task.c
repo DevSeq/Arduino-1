@@ -134,19 +134,6 @@ void device_template_task(void)
          Usb_ack_in_ready();
          rxok=FALSE;
       }
-
-      //.. Second interface management (interrupt IN endpoint)
-      //.. Just Send dummy data bytes
-      Usb_select_endpoint(EP_TEMP_INT_IN);    // Select this enpoint
-      if (Is_usb_write_enabled())             // Check data can be loaded
-      {                                       // And load dummy data...
-         Usb_write_byte(dummy_data);
-         Usb_write_byte(dummy_data+1);
-         Usb_write_byte(dummy_data+2);
-         Usb_write_byte(dummy_data+3);
-         Usb_ack_in_ready();
-         dummy_data+=4;
-      }
    }
 
    //Call Arduino user loop

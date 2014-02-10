@@ -79,7 +79,7 @@
 #define NB_CONFIGURATION      1
 
                // CONFIGURATION
-#define NB_INTERFACE       2           // Number of interfaces
+#define NB_INTERFACE       1           // Number of interfaces
 #define CONF_NB            1     //! Number of this configuration
 #define CONF_INDEX         0
 #define CONF_ATTRIBUTES    USB_CONFIG_BUSPOWERED
@@ -107,23 +107,6 @@
 #define EP_IN_LENGTH_TEMP2      64
 #define EP_SIZE_TEMP2           EP_IN_LENGTH_TEMP2
 #define EP_INTERVAL_TEMP2       0x00              // Interrupt polling interval from host
-
-             // USB Second Interface descriptor gen
-#define INTERFACE_NB_SECOND_TEMP        1        //! The number of this interface
-#define ALTERNATE_SECOND_TEMP           0        //! The alt settting nb of this interface
-#define NB_ENDPOINT_SECOND_TEMP         1        //! The number of endpoints this this interface have
-#define INTERFACE_CLASS_SECOND_TEMP     0x00     //! Class
-#define INTERFACE_SUB_CLASS_SECOND_TEMP 0x55     //! Sub Class
-#define INTERFACE_PROTOCOL_SECOND_TEMP  0xAA     //! Protocol
-#define INTERFACE_INDEX_SECOND_TEMP     0
-
-            // USB Endpoint 2 descriptor FS
-#define ENDPOINT_NB_TEMP3       (EP_TEMP_INT_IN | USB_ENDPOINT_IN)
-#define EP_ATTRIBUTES_TEMP3     0x03              // BULK = 0x02, INTERUPT = 0x03
-#define EP_IN_LENGTH_TEMP3      64
-#define EP_SIZE_TEMP3           EP_IN_LENGTH_TEMP2
-#define EP_INTERVAL_TEMP3       20              // Interrupt polling interval from host
-
 
 #define DEVICE_STATUS         USB_DEVICE_STATUS_BUS_POWERED
 
@@ -173,9 +156,9 @@
 #define USB_SN_LENGTH         0x0D
               // Serial Number should be at least 12 characters long
 #define USB_SERIAL_NUMBER \
-{ Usb_unicode('0') \
- ,Usb_unicode('0') \
- ,Usb_unicode('0') \
+{ Usb_unicode('A') \
+ ,Usb_unicode('B') \
+ ,Usb_unicode('C') \
  ,Usb_unicode('0') \
  ,Usb_unicode('0') \
  ,Usb_unicode('0') \
@@ -308,17 +291,14 @@ typedef struct {
 
 
 // Configuration descriptor template
-// The device has two interfaces
+// The device has one interface
 // - First interface has 2 bulk endpoints
-// - Second interface has 1 interrupt IN endpoint
 typedef struct
 {
    S_usb_configuration_descriptor cfg_temp;
    S_usb_interface_descriptor     ifc_temp;
    S_usb_endpoint_descriptor      ep1_temp;
    S_usb_endpoint_descriptor      ep2_temp;
-   S_usb_interface_descriptor     ifc_second_temp;
-   S_usb_endpoint_descriptor      ep3_temp;
 } S_usb_user_configuration_descriptor;
 
 
