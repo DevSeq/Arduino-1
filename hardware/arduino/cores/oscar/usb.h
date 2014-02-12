@@ -10,6 +10,8 @@
 #include <compiler.h>
 #include <conf_usb.h>
 
+#define EP_LEN 64
+
 class USB
 {
   public:
