@@ -81,7 +81,7 @@
 
 #define NB_ENDPOINTS          4  //  number of endpoints in the application including control endpoint
 #define EP_TEMP_IN            1
-#define EP_TEMP_OUT           1
+#define EP_TEMP_OUT           2
 
 #define USB_REMOTE_WAKEUP_FEATURE     DISABLED   //! don't allow remote wake up
 
