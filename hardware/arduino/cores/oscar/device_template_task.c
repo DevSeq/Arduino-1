@@ -62,10 +62,6 @@
 
 volatile U8 cpt_sof;
 
-U8 buf[256];
-U8 rxok;
-
-
 //!
 //! @brief This function initializes the hardware/software resources
 //! required for device application task.
@@ -82,7 +78,6 @@ void device_template_task_init(void)
 
    cpt_sof=0;
    Usb_enable_sof_interrupt();
-   rxok=FALSE;
 
    //Call Arduino user setup
    setup();
@@ -97,45 +92,6 @@ void device_template_task_init(void)
 //! @return none
 void device_template_task(void)
 {
-   U8 i;
-   U8 *ptr;
-   static U8 dummy_data;
-
-   //.. FIRST CHECK THE DEVICE ENUMERATION STATE
-   if (Is_device_enumerated())
-   {
-      //.. The example bellow just perform a loop back transmition/reception
-      //.. All data received wth the OUT endpoint are store in a ram buffer and
-      //.. send back to the IN endpoint
-
-      //.. First interface management
-      //.. Select the OUT endpoint declared in descriptors
-      //.. load the endpoint with the content of a ram buffer for example
-      Usb_select_endpoint(EP_TEMP_OUT);
-      if ( Is_usb_receive_out())
-      {
-         ptr=buf;
-         for(i=Usb_byte_counter();i;i--)
-         {
-            *ptr++=Usb_read_byte();
-         }
-         Usb_ack_receive_out();
-         rxok=TRUE;
-      }
-      //.. First interface management (cont)
-      //.. Select the IN endpoint declared in descriptors
-      //.. If we receive something, just store in the ram buffer
-      Usb_select_endpoint(EP_TEMP_IN);
-      if ( Is_usb_read_control_enabled()&&(rxok==TRUE))
-      {
-         ptr=buf;
-         for(i=0;i<EP_IN_LENGTH_TEMP1;i++)
-         Usb_write_byte(*ptr++);
-         Usb_ack_in_ready();
-         rxok=FALSE;
-      }
-   }
-
    //Call Arduino user loop
    loop();
 }
