@@ -102,6 +102,7 @@ extern U8  usb_configuration_nb;
 //!/
 void usb_device_task_init(void)
 {
+   Usb_enable_regulator();
    Usb_disable();
    Usb_enable();
 #if (USB_LOW_SPEED_DEVICE==ENABLE)
